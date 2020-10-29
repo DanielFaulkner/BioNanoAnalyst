@@ -708,7 +708,7 @@ class Main(QtWidgets.QMainWindow):
                     self.ui.ctg_check_combox.activated[str].connect(self.ctgs)
                     ## Make graphs
                     self.figure = plt.figure(facecolor='w')
-                    self.figure.hold(False)
+                    
                     self.canvas = FigureCanvas(self.figure)
                     self.canvas.setMaximumSize(720,420)
                     self.ui.verticalLayout_3.addWidget(self.canvas)
