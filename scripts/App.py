@@ -441,8 +441,8 @@ class Main(QtWidgets.QMainWindow):
                 i=1
                 ctg=sub['contig'][0]
                 while i < len(sub):
-                    score1=sub['score'][i-1]
-                    score2=sub['score'][i]
+                    score1=int(sub['score'][i-1])
+                    score2=int(sub['score'][i])
                     status1=sub['mapping_status'][i-1]
                     status2=sub['mapping_status'][i-1]
                     if score1==score2 and i!=len(sub)-1:
