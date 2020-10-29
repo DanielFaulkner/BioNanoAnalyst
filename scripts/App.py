@@ -35,7 +35,7 @@ from Settings import Ui_Settings
 from Analysis import*
 import pandas as pd
 import numpy as np
-import FileDialog
+from tkinter import filedialog
 from matplotlib.pyplot import figure, show
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
@@ -165,7 +165,7 @@ class Main(QtWidgets.QMainWindow):
             self.ref=codecs.decode(str(ref)[1:-1].split(',')[0][2:-1],'unicode_escape')
             self.ui.ref_input.setText(self.ref)
         else:
-            self.ref = unicode(QtWidgets.QFileDialog.getOpenFileName(self, 'Select reference sequences', '','sequences (*fasta *fa *fna)')[0])
+            self.ref = str(QtWidgets.QFileDialog.getOpenFileName(self, 'Select reference sequences', '','sequences (*fasta *fa *fna)')[0])
             self.ui.ref_input.setText(self.ref)
 
     def clear_ref(self):
@@ -195,7 +195,7 @@ class Main(QtWidgets.QMainWindow):
             self.bnx = codecs.decode(str(bnx)[1:-1].split(',')[0][2:-1],'unicode_escape')
             self.ui.raw_input.setText(self.bnx)
         else:
-            self.bnx = unicode(QtWidgets.QFileDialog.getOpenFileName(self,'Select bnx file','','bnx file (*.bnx)')[0])
+            self.bnx = str(QtWidgets.QFileDialog.getOpenFileName(self,'Select bnx file','','bnx file (*.bnx)')[0])
             self.ui.raw_input.setText(self.bnx)
 
     def clear_bnx(self):
@@ -243,7 +243,7 @@ class Main(QtWidgets.QMainWindow):
             self.xmap = codecs.decode(str(xmap)[1:-1].split(',')[0][2:-1],'unicode_escape')
             self.ui.xmap_input.setText(self.xmap)
         else:
-            self.xmap = unicode(QtWidgets.QFileDialog.getOpenFileName(self,'Select xmap file','','xmap file (*.xmap)')[0])
+            self.xmap = str(QtWidgets.QFileDialog.getOpenFileName(self,'Select xmap file','','xmap file (*.xmap)')[0])
             self.ui.xmap_input.setText(self.xmap)
 
     def clear_xmap(self):
@@ -256,7 +256,7 @@ class Main(QtWidgets.QMainWindow):
             self.rcmap = codecs.decode(str(rcmap)[1:-1].split(',')[0][2:-1],'unicode_escape')
             self.ui.rcmap_input.setText(self.rcmap)
         else:
-            self.rcmap = unicode(QtWidgets.QFileDialog.getOpenFileName(self,'Select ref cmap file','','cmap file (*_r.cmap)')[0])
+            self.rcmap = str(QtWidgets.QFileDialog.getOpenFileName(self,'Select ref cmap file','','cmap file (*_r.cmap)')[0])
             self.ui.rcmap_input.setText(self.rcmap)
 
     def clear_rcmap(self):
@@ -269,7 +269,7 @@ class Main(QtWidgets.QMainWindow):
             self.qcmap = codecs.decode(str(qcmap)[1:-1].split(',')[0][2:-1],'unicode_escape')
             self.ui.qcmap_input.setText(self.qcmap)
         else:
-            self.qcmap = unicode(QtWidgets.QFileDialog.getOpenFileName(self,'Select qry cmap file','','cmap file (*_q.cmap)')[0])
+            self.qcmap = str(QtWidgets.QFileDialog.getOpenFileName(self,'Select qry cmap file','','cmap file (*_q.cmap)')[0])
             self.ui.qcmap_input.setText(self.qcmap)
 
     def clear_qcmap(self):
@@ -347,7 +347,7 @@ class Main(QtWidgets.QMainWindow):
         self.canvas_ctg.show()
 
     def save_select(self):
-        self.output_path = unicode(QtWidgets.QFileDialog.getExistingDirectory())
+        self.output_path = str(QtWidgets.QFileDialog.getExistingDirectory())
         self.ui.save_input.setText(self.output_path)
     def save_clear(self):
         self.ui.save_input.clear()
@@ -1050,7 +1050,7 @@ class Settings(QtWidgets.QWidget):
         self.ui.setting_confirm_frame.rejected.connect(self.cancel)
 
     def select_tools_path(self):
-        self.tools_path = unicode(QtWidgets.QFileDialog.getExistingDirectory())
+        self.tools_path = str(QtWidgets.QFileDialog.getExistingDirectory())
         self.ui.tools_location_input.setText(self.tools_path)
 
     def clear_tools_path(self):
@@ -1058,7 +1058,7 @@ class Settings(QtWidgets.QWidget):
         self.tools_path = None
 
     def select_scripts_path(self):
-        self.scripts_path = unicode(QtWidgets.QFileDialog.getExistingDirectory())
+        self.scripts_path = str(QtWidgets.QFileDialog.getExistingDirectory())
         self.ui.scripts_location_input.setText(self.scripts_path)
 
     def clear_scripts_path(self):
