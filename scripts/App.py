@@ -473,7 +473,7 @@ class Main(QtWidgets.QMainWindow):
             if os.stat(self.ref).st_size>0:
                 with open(self.ref) as f:
                     for i in range(2):
-                        line=f.next().strip()
+                        line=next(f).strip()
                         if i == 0 and line[0]!='>':
                             return QtWidgets.QMessageBox.question(self, 'Error !', 'Please check your input reference !',
                             QtWidgets.QMessageBox.Ok)
@@ -708,7 +708,6 @@ class Main(QtWidgets.QMainWindow):
                     self.ui.ctg_check_combox.activated[str].connect(self.ctgs)
                     ## Make graphs
                     self.figure = plt.figure(facecolor='w')
-                    
                     self.canvas = FigureCanvas(self.figure)
                     self.canvas.setMaximumSize(720,420)
                     self.ui.verticalLayout_3.addWidget(self.canvas)
