@@ -7,7 +7,7 @@ Before using this tool, please make sure your platform satisfies the requirement
 
 1. There are at least 2 CPUs in your machine
   
-2. For Linux or macOS operating system, a Python (version:2.7.xx) and corresponding packages are required (see details below)
+2. For Linux or macOS operating system, Python (version: 3.x.x) and corresponding packages are required (see details below)
 
 #Python Installation
 
@@ -15,11 +15,11 @@ Before using this tool, please make sure your platform satisfies the requirement
 
 2. Unpack the downloaded file, for exmaple using 
   
-  $ tar -zxvf Python-2.7.xx.tar.gz in your terminal
+  $ tar -zxvf Python-3.x.x.tar.gz in your terminal
 
 3. Then enter into the created directory:
   
-  $ cd Python-2.7
+  $ cd Python-3.x
 
 4. Start the build process by configuring everthing to your system:
   
@@ -37,7 +37,7 @@ If there were no errors and eveything worked correctly, you should be able to ty
 
   $ python 
   
-  Python 2.7.x (...)
+  Python 3.x.x (...)
   
   ...
   
