@@ -433,7 +433,7 @@ class Main(QtWidgets.QMainWindow):
                 path=self.output_path
             name='BioNanoAnalyst_report_cs%s_%s.gff3'% (self.cs,curr_time)
             name_all='BioNanoAnalyst_report_overall_pairs_cs%s_%s.txt'% (self.cs, curr_time)
-	    test=len(self.running.overall)
+            test=len(self.running.overall)
             fd=open(os.path.join(path,name),'w')
             for j in self.running.overall['contig'].unique():
                 sub=self.running.overall[self.running.overall['contig']==j].reset_index(drop=True)
@@ -660,7 +660,7 @@ class Main(QtWidgets.QMainWindow):
                             self.ui.analyse_status_label.setStyleSheet('color: green')
                             self.ui.analyse_status_label.setText('Finished !')
                             t2=time()
-                            print 'The running time is %.2f seconds'%(t2-t1)
+                            print('The running time is %.2f seconds'%(t2-t1))
                         except AttributeError:
                             return
                 except:
@@ -730,7 +730,7 @@ class Main(QtWidgets.QMainWindow):
                     self.ui.analyse_status_label.setStyleSheet('color: green')
                     self.ui.analyse_status_label.setText('Finished !')
                     t2=time()
-                    print 'The running time is %.2f seconds' % (t2-t1)
+                    print('The running time is %.2f seconds' % (t2-t1))
                 except AttributeError:
                     return
         if not self.ui.raw_checkBox.isChecked() and not self.ui.aligned_checkBox.isChecked():
